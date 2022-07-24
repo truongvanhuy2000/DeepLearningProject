@@ -9,7 +9,7 @@ import tensorflow as tf
 facetracker = load_model(
     './facetrackerFinal2.h5', compile=False)
 classifier = load_model(
-    './my_model_final_final_final_final_final_final.h5')
+    './Best_model.h5')
 emotion_labels = ['Angry', 'Disgust', 'Fear',
                   'Happy', 'Neutral', 'Sad', 'Surprise']
 cap = cv2.VideoCapture(0)
@@ -28,7 +28,7 @@ while cap.isOpened():
         # Print emotion
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         x, y, w, h = sample_coords
-        roi_gray = gray[y-10:h+5, x:w]
+        roi_gray = gray[y-10:h+5, x-5:w+5]
         percent = []
         try:
             roi = cv2.resize(roi_gray, (48, 48),

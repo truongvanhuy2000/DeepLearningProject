@@ -11,7 +11,7 @@ import uuid
 import os
 facetracker = load_model(
     './facetrackerFinal2.h5', compile=False)
-IMAGES_PATH = 'D:/Documents/DeepLearning/Image/Emotion/capture/angry'
+IMAGES_PATH = 'D:/Documents/DeepLearning/Image/Emotion/capture/surprise'
 number_images = 200
 cap = cv2.VideoCapture(0)
 for imgnum in range(number_images):
